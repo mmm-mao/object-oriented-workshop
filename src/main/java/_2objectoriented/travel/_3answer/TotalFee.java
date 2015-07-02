@@ -1,4 +1,4 @@
-package _2objectoriented.travel._2;
+package _2objectoriented.travel._3answer;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

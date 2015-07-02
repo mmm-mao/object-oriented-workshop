@@ -1,6 +1,6 @@
-package _2objectoriented.travel._2;
+package _2objectoriented.travel._3answer;
 
-public enum Month {
+enum Month {
 
     _1月(1, Season.冬),
     _2月(2, Season.冬),
@@ -24,9 +24,10 @@ public enum Month {
 
     private Season season;
 
-    public SeasonBasicFee 季節の基本料金を計算する(int 基本料金){
-        return season.季節の基本料金を計算する(基本料金);
+    public Season 季節を判定する(){
+        return season;
     }
+
 
     public static Month create(int num){
 

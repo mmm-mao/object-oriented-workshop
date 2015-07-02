@@ -3,7 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package _2objectoriented.travel._2;
+package _2objectoriented.travel._3answer;
+
 
 import org.hamcrest.CoreMatchers;
 import org.junit.experimental.runners.Enclosed;
@@ -42,7 +43,7 @@ public class TourFeeCalculateServiceTest {
 
         @Theory
         public void _各月ごとの合計料金の確認(Fixture fixture) throws Exception {
-            TourFeeCalculateService sut = new TourFeeCalculateService(new DepartureMonth(fixture.departureMonth), new ParticipantCount(fixture.participantCount));
+            TourFeeCalculateService sut = new TourFeeCalculateService(TourType.沖縄弾丸ツアー, new DepartureMonth(fixture.departureMonth), new ParticipantCount(fixture.participantCount));
 
             int actual = sut.ツアー料金を計算する();
 
@@ -70,7 +71,7 @@ public class TourFeeCalculateServiceTest {
         @Theory
         public void _参加者ごとの合計料金の確認(Fixture fixture) throws Exception {
 
-            TourFeeCalculateService sut = new TourFeeCalculateService(new DepartureMonth(fixture.departureMonth), new ParticipantCount(fixture.participantCount));
+            TourFeeCalculateService sut = new TourFeeCalculateService(TourType.沖縄弾丸ツアー, new DepartureMonth(fixture.departureMonth), new ParticipantCount(fixture.participantCount));
 
             int actual = sut.ツアー料金を計算する();
 
@@ -81,7 +82,7 @@ public class TourFeeCalculateServiceTest {
     }
 
     @RunWith(Theories.class)
-    public static class _組み合わせによる合計料金の確認 {
+    public static class _出発月と人数の組み合わせによる合計料金の確認 {
 
 
         @DataPoints
@@ -91,7 +92,49 @@ public class TourFeeCalculateServiceTest {
         @Theory
         public void _月_参加者によるの合計料金の確認(Fixture fixture) throws Exception {
 
-            TourFeeCalculateService sut = new TourFeeCalculateService(new DepartureMonth(fixture.departureMonth), new ParticipantCount(fixture.participantCount));
+            TourFeeCalculateService sut = new TourFeeCalculateService(TourType.沖縄弾丸ツアー, new DepartureMonth(fixture.departureMonth), new ParticipantCount(fixture.participantCount));
+
+            int actual = sut.ツアー料金を計算する();
+
+
+            assertThat(actual, CoreMatchers.is(fixture.totalCount));
+        }
+
+    }
+
+    @RunWith(Theories.class)
+    public static class _ツアータイプの確認 {
+
+
+        @DataPoints
+        public static Fixture[] fixtures = {
+                new Fixture(1, 1, (int)(20000 * 0.75))};
+
+        @Theory
+        public void _月_参加者によるの合計料金の確認(Fixture fixture) throws Exception {
+
+            TourFeeCalculateService sut = new TourFeeCalculateService(TourType.沖縄ゆったりツアー, new DepartureMonth(fixture.departureMonth), new ParticipantCount(fixture.participantCount));
+
+            int actual = sut.ツアー料金を計算する();
+
+
+            assertThat(actual, CoreMatchers.is(fixture.totalCount));
+        }
+
+    }
+
+    @RunWith(Theories.class)
+    public static class _割合の確認 {
+
+
+        @DataPoints
+        public static Fixture[] fixtures = {
+                new Fixture(1, 1, (int)(10000 * 1.5))};
+
+        @Theory
+        public void _月_参加者によるの合計料金の確認(Fixture fixture) throws Exception {
+
+            TourFeeCalculateService sut = new TourFeeCalculateService(TourType.北海道弾丸ツアー, new DepartureMonth(fixture.departureMonth), new ParticipantCount(fixture.participantCount));
 
             int actual = sut.ツアー料金を計算する();
 

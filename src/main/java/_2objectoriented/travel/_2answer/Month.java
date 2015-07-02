@@ -1,4 +1,4 @@
-package _2objectoriented.travel._3;
+package _2objectoriented.travel._2answer;
 
 public enum Month {
 
@@ -24,8 +24,8 @@ public enum Month {
 
     private Season season;
 
-    public int 一人あたりの季節の料金を計算する(BasicFee basicFee){
-        return season.季節の料金を計算する(basicFee);
+    public SeasonBasicFee 季節の基本料金を計算する(BasicFee basicFee){
+        return season.季節の基本料金を計算する(basicFee);
     }
 
     public static Month create(int num){

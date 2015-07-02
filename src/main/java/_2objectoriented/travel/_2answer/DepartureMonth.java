@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package _2objectoriented.travel._2;
+package _2objectoriented.travel._2answer;
 
 /**
  *
@@ -12,13 +12,13 @@ package _2objectoriented.travel._2;
 public class DepartureMonth {
     
     private final Month month;
-    
+
     public DepartureMonth(int value){
         this.month = Month.create(value);
     }
 
-    public SeasonBasicFee 季節の基本料金を計算する(int 基本料金){
-        return month.季節の基本料金を計算する(基本料金);
+    public SeasonBasicFee 季節の基本料金を計算する(BasicFee basicFee){
+        return month.季節の基本料金を計算する(basicFee);
     }
 
 }

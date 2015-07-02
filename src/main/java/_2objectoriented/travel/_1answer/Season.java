@@ -1,4 +1,4 @@
-package _2objectoriented.travel._3;
+package _2objectoriented.travel._1answer;
 
 
 public enum Season {
@@ -15,8 +15,8 @@ public enum Season {
     private double rate;
 
 
-    public int 季節の料金を計算する(BasicFee baseFee){
-        return  (int) (baseFee.getValue() * rate);
+    public SeasonBasicFee 季節の基本料金を計算する(int baseFee){
+        return  new SeasonBasicFee((int) (baseFee * rate));
     }
 
 

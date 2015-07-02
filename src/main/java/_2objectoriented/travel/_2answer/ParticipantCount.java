@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package _2objectoriented.travel._2;
+package _2objectoriented.travel._2answer;
 
 /**
  *

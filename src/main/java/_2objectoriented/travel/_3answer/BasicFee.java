@@ -1,4 +1,4 @@
-package _2objectoriented.travel._3;
+package _2objectoriented.travel._3answer;
 
 /**
  * 一人あたりの基本料金
