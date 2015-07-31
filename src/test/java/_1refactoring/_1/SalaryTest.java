@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package _1refactoring;
+package _1refactoring._1;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
+
+import _1refactoring._1.Salary;
 import org.junit.Test;
 
 

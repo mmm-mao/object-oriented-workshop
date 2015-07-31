@@ -1,5 +1,7 @@
 package _2objectoriented.travel._1answer;
 
+import java.util.NoSuchElementException;
+
 public enum Month {
 
     _1月(1, Season.冬),
@@ -36,6 +38,6 @@ public enum Month {
             }
         }
 
-        throw new RuntimeException("月の指定が不正です");
+        throw new NoSuchElementException("月の指定が不正です");
     }
 }

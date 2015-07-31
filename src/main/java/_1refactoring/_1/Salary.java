@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package _1refactoring;
+package _1refactoring._1;
 
 
 public class Salary {
